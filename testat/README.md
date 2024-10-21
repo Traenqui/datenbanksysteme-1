@@ -106,14 +106,14 @@ classDiagram
 
 1. **Clone the Repository:**
 
-```bash
+```sh
    git clone git@github.com:Traenqui/datenbanksysteme-1.git
    cd datenbanksysteme-1
 ```
 
 2. Run the SQL script: To set up the database schema, insert data, and apply constraints, run the following command:
 
-```bash
+```sh
 psql -U postgres -v ON_ERROR_STOP=on -f 0_runAllScripts.sql
 ```
 
@@ -144,7 +144,8 @@ SELECT
     e.LastName,
     d.Name AS Department,
     s.Amount AS Salary,
-    pr.Score AS PerformanceScore
+    pr.Score AS PerformanceScore,
+    pr.Comments AS PerformanceComments
 FROM
     Employee e
 JOIN
@@ -154,7 +155,11 @@ JOIN
 LEFT JOIN
     PerformanceReview pr ON e.EmployeeID = pr.EmployeeID
 WHERE
-    pr.ReviewDate = (SELECT MAX(ReviewDate) FROM PerformanceReview WHERE EmployeeID = e.EmployeeID)
+    pr.ReviewDate = (
+        SELECT MAX(ReviewDate)
+        FROM PerformanceReview
+        WHERE EmployeeID = e.EmployeeID
+    )
 ORDER BY
     e.LastName, e.FirstName;
 ```

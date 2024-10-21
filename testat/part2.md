@@ -218,3 +218,32 @@ Die Demodaten in dem Skript wurden durch ChatGPT erstellt. Diese Aufgabe wurde a
 ### Aufgabe 5: Konsistenzbedingungen umsetzen
 
 Diese Aufgabe wurde mit der Datei [4_constraints.sql](./4_constraints.sql) gelöst.
+
+### Beispiel Query
+
+```sql
+SELECT
+    e.EmployeeID,
+    e.FirstName,
+    e.LastName,
+    d.Name AS Department,
+    s.Amount AS Salary,
+    pr.Score AS PerformanceScore,
+    pr.Comments AS PerformanceComments
+FROM
+    Employee e
+JOIN
+    Department d ON e.DepartmentID = d.DepartmentID
+JOIN
+    Salary s ON e.EmployeeID = s.EmployeeID
+LEFT JOIN
+    PerformanceReview pr ON e.EmployeeID = pr.EmployeeID
+WHERE
+    pr.ReviewDate = (
+        SELECT MAX(ReviewDate)
+        FROM PerformanceReview
+        WHERE EmployeeID = e.EmployeeID
+    )
+ORDER BY
+    e.LastName, e.FirstName;
+```
