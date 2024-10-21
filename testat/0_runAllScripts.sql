@@ -30,3 +30,5 @@ CREATE DATABASE :database WITH OWNER=:user ENCODING='UTF8';
 
 -- create primary keys, constraints, indexes
 \ir 4_constraints.sql
+
+\echo All scripts executed successfully!
