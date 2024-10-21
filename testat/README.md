@@ -107,8 +107,8 @@ classDiagram
 1. **Clone the Repository:**
 
 ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone git@github.com:Traenqui/datenbanksysteme-1.git
+   cd datenbanksysteme-1
 ```
 
 2. Run the SQL script: To set up the database schema, insert data, and apply constraints, run the following command:
@@ -169,7 +169,7 @@ Contributions are welcome! If you have suggestions for improvements or want to r
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE] file for details.
 
 ## Acknowledgments
 
