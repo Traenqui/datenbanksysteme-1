@@ -201,7 +201,7 @@ Die **Table-per-Subclass**-Strategie wurde verwendet, weil sie eine klare Trennu
 - Es müssen `JOIN` Abfragen verwendet werden, wenn Manager- und Mitarbeiterdaten gleichzeitig abgefragt werden sollen.
 - Die Komplexität der Abfragen steigt mit jeder weiteren Subklasse.
 
-Wir haben uns für diese Strategie gewählt, da nur wenige Mitarbeiter Manager sind. Zudem soll die Mitarbeiter-Tabelle nur die Klassenspezifischen Attribute enthalten, damit wir diese in Zukunft leichter erweitern können.
+Wir haben diese Strategie gewählt, da nur wenige Mitarbeiter Manager sind. Zudem soll die Mitarbeiter-Tabelle nur die Klassenspezifischen Attribute enthalten, damit wir diese in Zukunft leichter erweitern können.
 
 ### Aufgabe 2: Datenbank erstellen
 
